@@ -1,6 +1,8 @@
 # jQuery Fadeshow
 
-Damn simple fading slideshow.
+A damn simple fading slideshow. Takes an interval and an animation speed. Pauses on hover.
+
+# [DEMO](http://bleech.github.com/jquery.fadeshow)
 
 ## Getting Started
 Download the [production version][min] or the [development version][max].
