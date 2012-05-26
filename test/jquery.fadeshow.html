@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>jQuery Fadeshow Test Suite</title>
+  <!-- Load local jQuery, removing access to $ (use jQuery, not $). -->
+  <script src="../libs/jquery/jquery.js"></script>
+  <script>jQuery.noConflict()</script>
+  <!-- Load local QUnit (grunt requires v1.0.0 or newer). -->
+  <link rel="stylesheet" href="../libs/qunit/qunit.css" media="screen">
+  <script src="../libs/qunit/qunit.js"></script>
+  <!-- Load local lib and tests. -->
+  <script src="../src/jquery.fadeshow.js"></script>
+  <script src="jquery.fadeshow_test.js"></script>
+
+  <style>
+    #qunit-fixture ul,
+    #qunit-fixture ul li {
+      display: inline-block;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="qunit-header">jQuery Fadeshow Test Suite</h1>
+  <h2 id="qunit-banner"></h2>
+  <div id="qunit-testrunner-toolbar"></div>
+  <h2 id="qunit-userAgent"></h2>
+  <ol id="qunit-tests"></ol>
+  <div id="qunit-fixture">
+    <ul>
+      <li><img src="http://dummyimage.com/800x600/4d494d/686a82.gif&amp;text=placeholder+image" alt="placeholder+image"></li>
+      <li><img src="http://dummyimage.com/800x600/4d494d/686a82.gif&amp;text=placeholder+image" alt="placeholder+image"></li>
+      <li><img src="http://dummyimage.com/800x600/4d494d/686a82.gif&amp;text=placeholder+image" alt="placeholder+image"></li>
+    </ul>
+  </div>
+</body>
+</html>
