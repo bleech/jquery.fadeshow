@@ -11,7 +11,7 @@
     <script src="https://raw.github.com/bleech/jquery.fadeshow/master/libs/jquery/jquery.js"></script>
     <script src="https://raw.github.com/bleech/jquery.fadeshow/master/dist/jquery.fadeshow.min.js"></script>
     <script>
-      $(document).ready(function () {
+      $(window).load(function () {
         $('.container').fadeshow({
           interval: 2500,
           speed: 1000
@@ -27,6 +27,14 @@
       }
       .container {
         margin: 0 -20px 20px;
+      }
+      .container li:not(:first-child) {
+        display: none;
+      }
+      @media print, screen and (max-width: 740px) {
+        .container img {
+          height: auto;
+        }
       }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -53,8 +61,8 @@
 
 <ul class="container">
   <li><img src="http://www.dummyimage.com/640x200/3A3C42/F8F8F2&amp;text=first" width="640" height="200" alt="first" /></li>
-  <li><img src="http://www.dummyimage.com/640x200/3A3C42/F92672&amp;text=second" width="640" height="200" alt="first" /></li>
-  <li><img src="http://www.dummyimage.com/640x200/3A3C42/A6E22E&amp;text=third" width="640" height="200" alt="first" /></li>
+  <li><img src="http://www.dummyimage.com/640x200/3A3C42/F92672&amp;text=second" width="640" height="200" alt="second" /></li>
+  <li><img src="http://www.dummyimage.com/640x200/3A3C42/A6E22E&amp;text=third" width="640" height="200" alt="third" /></li>
 </ul>
 
 <h2>Getting Started</h2>
