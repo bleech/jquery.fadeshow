@@ -8,6 +8,27 @@
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="javascripts/scale.fix.js"></script>
+    <script src="https://raw.github.com/bleech/jquery.fadeshow/master/libs/jquery/jquery.js"></script>
+    <script src="https://raw.github.com/bleech/jquery.fadeshow/master/dist/jquery.fadeshow.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $('.container').fadeshow({
+          interval: 2500,
+          speed: 1000
+        });
+      });
+    </script>
+    <style>
+      .container,
+      .container li {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        margin: 0 -20px 20px;
+      }
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
     <!--[if lt IE 9]>
@@ -27,9 +48,14 @@
         </ul>
       </header>
       <section>
-        <h1>jQuery Fadeshow</h1>
 
-<p>Damn simple fading slideshow.</p>
+<p>A damn simple fading slideshow. Takes an interval and an animation speed. Pauses on hover.</p>
+
+<ul class="container">
+  <li><img src="http://www.dummyimage.com/640x200/3A3C42/F8F8F2&amp;text=first" width="640" height="200" alt="first" /></li>
+  <li><img src="http://www.dummyimage.com/640x200/3A3C42/F92672&amp;text=second" width="640" height="200" alt="first" /></li>
+  <li><img src="http://www.dummyimage.com/640x200/3A3C42/A6E22E&amp;text=third" width="640" height="200" alt="first" /></li>
+</ul>
 
 <h2>Getting Started</h2>
 
