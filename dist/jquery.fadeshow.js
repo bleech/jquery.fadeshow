@@ -28,7 +28,7 @@
       // prepare visibility & styles
       elem.css({
         height: this.current_slide.height(),
-        position: 'relative',
+        position: elem.css('position') === 'static' ? 'relative' : elem.css('position'),
         width: this.current_slide.width()
       });
 
@@ -48,16 +48,13 @@
     // fade out current slide + set next slide + fade in next slide
     Fadeshow.prototype.next = function () {
       this.current_slide.fadeOut(this.options.speed);
-      this.current_slide = this.current_slide.next().length !== 1 ? this.slides.first() : this.current_slide.next();
+      this.current_slide = this.current_slide.next().length === 0 ? this.slides.first() : this.current_slide.next();
       this.current_slide.fadeIn(this.options.speed);
     };
 
     // start slideshow
     Fadeshow.prototype.start = function () {
-      var that = this;
-      this.interval = setInterval(function () {
-        that.next();
-      }, this.options.interval);
+      this.interval = setInterval($.proxy(this.next, this), this.options.interval);
     };
 
     // stop slideshow
