@@ -47,7 +47,7 @@
     <div class="wrapper">
       <header>
         <h1>jQuery Fadeshow</h1>
-        <p>Damn simple fading slideshow.</p>
+        <p>A simple fading slideshow.</p>
         <p class="view"><a href="https://github.com/bleech/jquery.fadeshow">View the Project on GitHub <small>bleech/jquery.fadeshow</small></a></p>
         <ul>
           <li><a href="https://github.com/bleech/jquery.fadeshow/zipball/master">Download <strong>ZIP File</strong></a></li>
@@ -57,7 +57,7 @@
       </header>
       <section>
 
-<p>A damn simple fading slideshow. Takes an interval and an animation speed. Pauses on hover.</p>
+<p>A simple fading slideshow. Takes an interval and an animation speed. Pauses on hover.</p>
 
 <ul class="container">
   <li><img src="http://www.dummyimage.com/640x200/3A3C42/F8F8F2&amp;text=first" width="640" height="200" alt="first" /></li>
@@ -95,16 +95,26 @@
 <pre><span class="c1">// setting global default options</span>
 <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">fadeshow</span><span class="p">.</span><span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
   <span class="nx">interval</span><span class="o">:</span> <span class="mi">4000</span><span class="p">,</span>
-  <span class="nx">speed</span><span class="o">:</span> <span class="mi">600</span>
+  <span class="nx">speed</span><span class="o">:</span> <span class="mi">600</span><span class="p">,</span>
+  <span class="nx">onInit</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{},</span>
+  <span class="nx">onFade</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{}</span>
 <span class="p">};</span>
 
 <span class="c1">// setting custom instance options</span>
 <span class="nx">$</span><span class="p">(</span><span class="s1">'.container'</span><span class="p">).</span><span class="nx">fadeshow</span><span class="p">({</span>
   <span class="nx">interval</span><span class="o">:</span> <span class="mi">2000</span><span class="p">,</span>
-  <span class="nx">speed</span><span class="o">:</span> <span class="mi">1000</span>
+  <span class="nx">speed</span><span class="o">:</span> <span class="mi">1000</span><span class="p">,</span>
+  <span class="nx">onInit</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{},</span>
+  <span class="nx">onFade</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{}</span>
 <span class="p">});</span>
 </pre>
 </div>
+
+
+<h2>Roadmap</h2>
+<ul>
+  <li>making the plugin extendable globally and per instance (prototypal inheritance)</li>
+</ul>
 
 
 <h2>Contributing</h2>
