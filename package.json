@@ -1,7 +1,7 @@
 {
   "name": "jquery.fadeshow",
   "title": "jQuery Fadeshow",
-  "description": "Damn simple fading slideshow.",
+  "description": "A simple fading slideshow.",
   "version": "0.1.0",
   "homepage": "https://github.com/bleech/jquery.fadeshow",
   "author": {
