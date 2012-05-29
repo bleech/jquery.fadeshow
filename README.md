@@ -29,15 +29,22 @@ $('.container').fadeshow();
 // setting global default options
 $.fn.fadeshow.options = {
   interval: 4000,
-  speed: 600
+  speed: 600,
+  onInit: function () {},
+  onFade: function () {}
 };
 
 // setting custom instance options
 $('.container').fadeshow({
   interval: 2000,
-  speed: 1000
+  speed: 1000,
+  onInit: function () {},
+  onFade: function () {}
 });
 ```
+
+## Roadmap
+- making the plugin extendable globally and per instance (prototypal inheritance)
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/cowboy/grunt).

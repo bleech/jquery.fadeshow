@@ -31,7 +31,9 @@
       // set defaults
       $.fn.fadeshow.options = {
         interval: 50,
-        speed: 50
+        speed: 50,
+        onInit: function () {},
+        onFade: function () {}
       };
 
       // run the slideshow
@@ -69,7 +71,7 @@
   asyncTest('starting over with first slide after reaching the last one', 2, function () {
     var that = this;
     setTimeout(function () {
-      ok(that.slides.eq(that.slides.length - 1).is(':visible'), 'shows last slide');
+      ok(that.slides.last().is(':visible'), 'shows last slide');
       setTimeout(function () {
         ok(that.slides.first().is(':visible'), 'shows first slide');
         start();

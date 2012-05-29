@@ -1,4 +1,4 @@
-/*! jQuery Fadeshow - v0.1.0 - 2012-05-26
+/*! jQuery Fadeshow - v0.1.0 - 2012-05-29
 * https://github.com/bleech/jquery.fadeshow
 * Copyright (c) 2012 bleech; Licensed MIT, GPL */
 
@@ -20,7 +20,9 @@
     // global default options
     $.fn.fadeshow.options = {
       interval: 4000,
-      speed: 600
+      speed:    600,
+      onInit:   function () {},
+      onFade:   function () {}
     };
 
     // plugin constructor
@@ -33,8 +35,8 @@
 
       // set basic container styles
       elem.css({
-        height: this.current_slide.height(),
-        width: this.current_slide.width(),
+        height:   this.current_slide.height(),
+        width:    this.current_slide.width(),
         position: elem.css('position') === 'static' ? 'relative' : elem.css('position')
       });
 
@@ -47,6 +49,9 @@
 
       // start the show
       this.start();
+
+      // onInit callback
+      this.options.onInit.call(this);
 
     };
 
@@ -61,10 +66,25 @@
     };
 
     // fade out current slide + set next slide + fade in next slide
-    Fadeshow.prototype.next = function () {
+    Fadeshow.prototype.show = function (index) {
       this.current_slide.fadeOut(this.options.speed);
-      this.current_slide = this.current_slide.next().length === 0 ? this.slides.first() : this.current_slide.next();
+      this.current_slide = this.slides.eq(index);
       this.current_slide.fadeIn(this.options.speed);
+
+      // onFade callback
+      this.options.onFade.call(this);
+    };
+
+    // navigate to previous slide
+    Fadeshow.prototype.prev = function () {
+      var index = this.current_slide.prev().length === 0 ? this.slides.last() : this.slides.index(this.current_slide.prev());
+      this.show(index);
+    };
+
+    // navigate to next slide
+    Fadeshow.prototype.next = function () {
+      var index = this.current_slide.next().length === 0 ? 0 : this.slides.index(this.current_slide.next());
+      this.show(index);
     };
 
 }( jQuery, window, document ));
