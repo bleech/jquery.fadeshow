@@ -78,7 +78,7 @@
 
     // navigate to previous slide
     Fadeshow.prototype.prev = function () {
-      var index = this.current_slide.prev().length === 0 ? this.slides.last() : this.slides.index(this.current_slide.prev());
+      var index = this.current_slide.prev().length === 0 ? this.slides.length - 1 : this.slides.index(this.current_slide.prev());
       this.show(index);
     };
 
