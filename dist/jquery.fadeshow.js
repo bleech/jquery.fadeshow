@@ -1,4 +1,4 @@
-/*! jQuery Fadeshow - v0.1.0 - 2012-05-29
+/*! jQuery Fadeshow - v0.1.0 - 2012-06-16
 * https://github.com/bleech/jquery.fadeshow
 * Copyright (c) 2012 bleech; Licensed MIT, GPL */
 
@@ -29,15 +29,16 @@
     var Fadeshow = function (elem, options) {
 
       // options & elements
+      this.elem          = elem;
       this.options       = options;
-      this.slides        = elem.children();
+      this.slides        = this.elem.children();
       this.current_slide = this.slides.first();
 
       // set basic container styles
-      elem.css({
+      this.elem.css({
         height:   this.current_slide.height(),
         width:    this.current_slide.width(),
-        position: elem.css('position') === 'static' ? 'relative' : elem.css('position')
+        position: this.elem.css('position') === 'static' ? 'relative' : this.elem.css('position')
       });
 
       // set slide styles & hide others than first

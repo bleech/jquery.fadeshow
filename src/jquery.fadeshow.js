@@ -33,15 +33,16 @@
     var Fadeshow = function (elem, options) {
 
       // options & elements
+      this.elem          = elem;
       this.options       = options;
-      this.slides        = elem.children();
+      this.slides        = this.elem.children();
       this.current_slide = this.slides.first();
 
       // set basic container styles
-      elem.css({
+      this.elem.css({
         height:   this.current_slide.height(),
         width:    this.current_slide.width(),
-        position: elem.css('position') === 'static' ? 'relative' : elem.css('position')
+        position: this.elem.css('position') === 'static' ? 'relative' : this.elem.css('position')
       });
 
       // set slide styles & hide others than first
